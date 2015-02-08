@@ -1,0 +1,27 @@
+{
+	"name": "pointer-lock",
+	"version": "0.1.0",
+	"description": "This plugin allows the user to quickly activate and deactivate pointer lock.",
+	"author": "GameLab",
+	"logo": "xx",
+
+	"homepage": "http://kiwijs.org/",
+	"bugs": "xx",
+	"license": "xx",
+	"licenseUrl": "xx",
+
+	"repository": {
+		"type": "git",
+		"url": "xx"
+	},
+
+	"main": "src/pointer-lock.js",
+
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "~0.4.x",
+		"grunt-contrib-uglify": "0.2.x",
+		"grunt-contrib-yuidoc": "0.4.x",
+		"grunt-contrib-jshint": "~0.10.0"
+	}
+}

@@ -1,0 +1,531 @@
+{
+    "project": {
+        "name": "pointer-lock",
+        "description": "This plugin allows the user to quickly activate and deactivate pointer lock.",
+        "version": "0.1.0",
+        "url": "http://kiwijs.org/"
+    },
+    "files": {
+        "src/pointer-lock.js": {
+            "name": "src/pointer-lock.js",
+            "modules": {
+                "Plugins": 1,
+                "PointerLock": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.PointerLock": 1,
+                "Kiwi.Plugins.PointerLock.PointerLock": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1,
+                "Kiwi.Plugins.PointerLock": 1
+            }
+        }
+    },
+    "modules": {
+        "Kiwi": {
+            "name": "Kiwi",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1
+            }
+        },
+        "Plugins": {
+            "name": "Plugins",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "Kiwi.Plugins": 1
+            },
+            "module": "Kiwi.Plugins",
+            "namespace": "",
+            "file": "src/pointer-lock.js",
+            "line": 1,
+            "description": "Description about the main namespace that the plugin is in."
+        },
+        "Kiwi.Plugins": {
+            "name": "Kiwi.Plugins",
+            "submodules": {
+                "Plugins": 1,
+                "PointerLock": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.PointerLock": 1,
+                "Kiwi.Plugins.PointerLock.PointerLock": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins.PointerLock": 1
+            },
+            "file": "src/pointer-lock.js",
+            "line": 56
+        },
+        "PointerLock": {
+            "name": "PointerLock",
+            "submodules": {},
+            "classes": {
+                "Kiwi.Plugins.PointerLock": 1,
+                "Kiwi.Plugins.PointerLock.PointerLock": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "Kiwi.Plugins.PointerLock": 1
+            },
+            "module": "Kiwi.Plugins",
+            "namespace": "",
+            "file": "src/pointer-lock.js",
+            "line": 56,
+            "description": "Description about the main namespace that the plugin is in."
+        }
+    },
+    "classes": {
+        "Kiwi.Plugins.PointerLock": {
+            "name": "Kiwi.Plugins.PointerLock",
+            "shortname": "Kiwi.Plugins.PointerLock",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock",
+            "file": "src/pointer-lock.js",
+            "line": 1,
+            "description": "Description about the main namespace that the plugin is in."
+        },
+        "Kiwi.Plugins.PointerLock.PointerLock": {
+            "name": "Kiwi.Plugins.PointerLock.PointerLock",
+            "shortname": "PointerLock",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock",
+            "file": "src/pointer-lock.js",
+            "line": 56,
+            "description": "The PointerLock object manages pointer lock for your game.\n<br><br>\nThis object only requires a reference to the Game object to initialise.\n\tIt will otherwise set default values.\n\tYou may pass a single Game object instead of its standard params,\n\tfor example \"new Kiwi.Plugins.PointerLock.PointerLock( myGame )\"\n\tinstead of \"new Kiwi.Plugins.PointerLock.PointerLock( { game: myGame } )\".\n\tYou must specify the entire params object if you wish to set other params.\n<br><br>\nBy default, when you create a new PointerLock object, it will trigger\n\tpointer lock when the user clicks anywhere on the game area.\n\tYou can exit pointer lock by pressing ESC.\n\tWe provide this method because pointer lock must be activated\n\tby user gesture.\n<br><br>\nThe PointerLock object tracks the X and Y movements of the mouse\n\tand can fire custom functions as part of the user gesture.\n\tBy default this occurs whether the pointer is locked or not.\n\tYou may toggle this with the \"trackWhileUnlocked\" flag.\n<br><br>\nYou may define custom functions in the blank functions\n\t\"runOnLock\", \"runOnUnlock,\" \"runOnMouseMove\" and \"runOnLockError\".",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "params",
+                    "description": "Parameter object",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "game",
+                            "description": "Current game object",
+                            "type": "Kiwi.Game"
+                        },
+                        {
+                            "name": "lockOnClick",
+                            "description": "Whether to always lock the game\n\t\twhen clicked",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "trackWhileUnlocked",
+                            "description": "Whether to always\n\t\ttrack mouse movement events",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "runOnLock",
+                            "description": "Function to run on pointer lock",
+                            "type": "Function",
+                            "optional": true
+                        },
+                        {
+                            "name": "runOnUnlock",
+                            "description": "Function to run on pointer unlock",
+                            "type": "Function",
+                            "optional": true
+                        },
+                        {
+                            "name": "runOnLockError",
+                            "description": "Function to run on error",
+                            "type": "Function",
+                            "optional": true
+                        },
+                        {
+                            "name": "runOnMouseMove",
+                            "description": "Function to run on mouse movement",
+                            "type": "Function",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Kiwi.Plugins.PointerLock.PointerLock"
+            },
+            "since": "0.1.0"
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/pointer-lock.js",
+            "line": 10,
+            "description": "The name of this plugin.",
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "default": "\"MyPlugin\"",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.PointerLock",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 19,
+            "description": "The version of this plugin.",
+            "itemtype": "property",
+            "name": "version",
+            "type": "String",
+            "default": "\"0.1.0\"",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.PointerLock",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 31,
+            "description": "Registers this plugin with the Global Kiwi Plugins Manager if it is avaiable.",
+            "class": "Kiwi.Plugins.PointerLock",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 37,
+            "description": "This create method is executed when Kiwi Game that has been told\nto use this plugin reaches the boot stage of the game loop.",
+            "itemtype": "method",
+            "name": "create",
+            "params": [
+                {
+                    "name": "game",
+                    "description": "The game that is current in the boot stage.",
+                    "type": "Kiwi.Game"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.PointerLock",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 99,
+            "description": "DOM element on which the lock occurs",
+            "itemtype": "property",
+            "name": "canvas",
+            "type": "Object",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 108,
+            "description": "Whether the canvas is currently locked",
+            "itemtype": "property",
+            "name": "locked",
+            "type": "Boolean",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 117,
+            "description": "Whether to lock the pointer if it is not locked and the game is clicked.",
+            "itemtype": "property",
+            "name": "lockOnClick",
+            "type": "Boolean",
+            "default": "true",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 127,
+            "description": "Mouse delta in X axis; how far the mouse was last moved horizontally.\n\tThis data is available to the \"runOnMouseMove\" method\n\tand should be used there.",
+            "itemtype": "property",
+            "name": "movementX",
+            "type": "Number",
+            "default": "0",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 139,
+            "description": "Mouse delta in Y axis; how far the mouse was last moved vertically.\n\tThis data is available to the \"runOnMouseMove\" method\n\tand should be used there.",
+            "itemtype": "property",
+            "name": "movementY",
+            "type": "Number",
+            "default": "0",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 151,
+            "description": "Whether to track mouse deltas when the pointer is not locked.",
+            "itemtype": "property",
+            "name": "trackWhileUnlocked",
+            "type": "Boolean",
+            "default": "true",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 233,
+            "itemtype": "method",
+            "name": "_reportLockChange",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Event"
+                }
+            ],
+            "since": "0.1.0",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 254,
+            "itemtype": "method",
+            "name": "_reportLockError",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Event"
+                }
+            ],
+            "since": "0.1.0",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 267,
+            "itemtype": "method",
+            "name": "_reportMouseMove",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Event"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 291,
+            "description": "Convenience method for quickly activating pointer lock.\n\tWhen called, the game listens for a click anywhere on its surface,\n\tthen activates pointer lock.",
+            "itemtype": "method",
+            "name": "clickGameToLock",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 310,
+            "description": "Disables pointer lock.\n\tIn the event that you need to bypass safety checks,\n\tyou may directly call \"this.canvas.exitPointerLock()\",\n\tbut this is not recommended.",
+            "itemtype": "method",
+            "name": "disablePointerLock",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 328,
+            "description": "Enables pointer lock.\n\tIn the event that you need to bypass safety checks,\n\tyou may directly call \"this.canvas.requestPointerLock()\",\n\tbut this is not recommended.",
+            "itemtype": "method",
+            "name": "enablePointerLock",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 355,
+            "description": "Returns the currently locked DOM element, or \"null\" if no element is locked.",
+            "itemtype": "method",
+            "name": "getPointerLockElement",
+            "return": {
+                "description": "DOM element that is locked.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 370,
+            "description": "Returns the type of object that this is.",
+            "itemtype": "method",
+            "name": "objType",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 382,
+            "description": "Empty function called whenever the pointer is locked.\n\tOverride this to perform game-specific functions.\n\tScope is always on the PointerLock object.",
+            "itemtype": "method",
+            "name": "runOnLock",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 393,
+            "description": "Empty function called whenever the pointer lock encounters an error.\n\tOverride this to perform game-specific functions.\n\tScope is always on the PointerLock object.",
+            "itemtype": "method",
+            "name": "runOnLockError",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 404,
+            "description": "Empty function called whenever the pointer moves.\n\tOverride this to perform game-specific functions.\n\tScope is always on the PointerLock object.",
+            "itemtype": "method",
+            "name": "runOnMouseMove",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        },
+        {
+            "file": "src/pointer-lock.js",
+            "line": 415,
+            "description": "Empty function called whenever the pointer is unlocked.\n\tOverride this to perform game-specific functions.\n\tScope is always on the PointerLock object.",
+            "itemtype": "method",
+            "name": "runOnUnlock",
+            "access": "public",
+            "tagname": "",
+            "since": "0.1.0",
+            "class": "Kiwi.Plugins.PointerLock.PointerLock",
+            "module": "Kiwi.Plugins",
+            "submodule": "PointerLock",
+            "namespace": "Kiwi.Plugins.PointerLock"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nRegisters this plugin with the Global Kiwi Plugins Manager if it is avaiable.",
+            "line": " src/pointer-lock.js:31"
+        }
+    ]
+}

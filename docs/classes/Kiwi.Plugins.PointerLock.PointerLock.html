@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kiwi.Plugins.PointerLock.PointerLock - pointer-lock</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="pointer-lock"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Kiwi.Plugins.PointerLock.html">Kiwi.Plugins.PointerLock</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.PointerLock.PointerLock.html">Kiwi.Plugins.PointerLock.PointerLock</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Kiwi.html">Kiwi</a></li>
+            
+                <li><a href="../modules/Kiwi.Plugins.html">Kiwi.Plugins</a></li>
+            
+                <li><a href="../modules/Plugins.html">Plugins</a></li>
+            
+                <li><a href="../modules/PointerLock.html">PointerLock</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Kiwi.Plugins.PointerLock.PointerLock Class</h1>
+<div class="box meta">
+    
+
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/src_pointer-lock.js.html#l56"><code>src&#x2F;pointer-lock.js:56</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/PointerLock.html">PointerLock</a><br>
+            Parent Module: <a href="../modules/Kiwi.Plugins.html">Kiwi.Plugins</a>
+        
+    
+
+    
+        <p>Available since 0.1.0</p>
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>The PointerLock object manages pointer lock for your game.
+<br><br>
+This object only requires a reference to the Game object to initialise.
+    It will otherwise set default values.
+    You may pass a single Game object instead of its standard params,
+    for example &quot;new Kiwi.Plugins.PointerLock.PointerLock( myGame )&quot;
+    instead of &quot;new Kiwi.Plugins.PointerLock.PointerLock( { game: myGame } )&quot;.
+    You must specify the entire params object if you wish to set other params.
+<br><br>
+By default, when you create a new PointerLock object, it will trigger
+    pointer lock when the user clicks anywhere on the game area.
+    You can exit pointer lock by pressing ESC.
+    We provide this method because pointer lock must be activated
+    by user gesture.
+<br><br>
+The PointerLock object tracks the X and Y movements of the mouse
+    and can fire custom functions as part of the user gesture.
+    By default this occurs whether the pointer is locked or not.
+    You may toggle this with the &quot;trackWhileUnlocked&quot; flag.
+<br><br>
+You may define custom functions in the blank functions
+    &quot;runOnLock&quot;, &quot;runOnUnlock,&quot; &quot;runOnMouseMove&quot; and &quot;runOnLockError&quot;.</p>
+
+</div>
+
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Kiwi.Plugins.PointerLock.PointerLock" class="method item">
+    <h3 class="name"><code>Kiwi.Plugins.PointerLock.PointerLock</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l56"><code>src&#x2F;pointer-lock.js:56</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Parameter object</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">game</code>
+                                    <span class="type">Kiwi.Game</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Current game object</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[lockOnClick=true]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Whether to always lock the game
+        when clicked</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[trackWhileUnlocked=true]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Whether to always
+        track mouse movement events</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[runOnLock]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Function to run on pointer lock</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[runOnUnlock]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Function to run on pointer unlock</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[runOnLockError]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Function to run on error</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[runOnMouseMove]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Function to run on mouse movement</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>Kiwi.Plugins.PointerLock.PointerLock</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method private">
+                                <a href="#method__reportLockChange">_reportLockChange</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__reportLockError">_reportLockError</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__reportMouseMove">_reportMouseMove</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_clickGameToLock">clickGameToLock</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_disablePointerLock">disablePointerLock</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_enablePointerLock">enablePointerLock</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_getPointerLockElement">getPointerLockElement</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_objType">objType</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_runOnLock">runOnLock</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_runOnLockError">runOnLockError</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_runOnMouseMove">runOnMouseMove</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_runOnUnlock">runOnUnlock</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property public">
+                                <a href="#property_canvas">canvas</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public">
+                                <a href="#property_locked">locked</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public">
+                                <a href="#property_lockOnClick">lockOnClick</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public">
+                                <a href="#property_movementX">movementX</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public">
+                                <a href="#property_movementY">movementY</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public">
+                                <a href="#property_trackWhileUnlocked">trackWhileUnlocked</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method__reportLockChange" class="method item private">
+    <h3 class="name"><code>_reportLockChange</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l233"><code>src&#x2F;pointer-lock.js:233</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type">Event</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__reportLockError" class="method item private">
+    <h3 class="name"><code>_reportLockError</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l254"><code>src&#x2F;pointer-lock.js:254</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type">Event</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__reportMouseMove" class="method item private">
+    <h3 class="name"><code>_reportMouseMove</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l267"><code>src&#x2F;pointer-lock.js:267</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type">Event</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_clickGameToLock" class="method item public">
+    <h3 class="name"><code>clickGameToLock</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l291"><code>src&#x2F;pointer-lock.js:291</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Convenience method for quickly activating pointer lock.
+    When called, the game listens for a click anywhere on its surface,
+    then activates pointer lock.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_disablePointerLock" class="method item public">
+    <h3 class="name"><code>disablePointerLock</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l310"><code>src&#x2F;pointer-lock.js:310</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Disables pointer lock.
+    In the event that you need to bypass safety checks,
+    you may directly call &quot;this.canvas.exitPointerLock()&quot;,
+    but this is not recommended.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_enablePointerLock" class="method item public">
+    <h3 class="name"><code>enablePointerLock</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l328"><code>src&#x2F;pointer-lock.js:328</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Enables pointer lock.
+    In the event that you need to bypass safety checks,
+    you may directly call &quot;this.canvas.requestPointerLock()&quot;,
+    but this is not recommended.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getPointerLockElement" class="method item public">
+    <h3 class="name"><code>getPointerLockElement</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l355"><code>src&#x2F;pointer-lock.js:355</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the currently locked DOM element, or &quot;null&quot; if no element is locked.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>DOM element that is locked.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_objType" class="method item public">
+    <h3 class="name"><code>objType</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l370"><code>src&#x2F;pointer-lock.js:370</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the type of object that this is.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_runOnLock" class="method item public">
+    <h3 class="name"><code>runOnLock</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l382"><code>src&#x2F;pointer-lock.js:382</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Empty function called whenever the pointer is locked.
+    Override this to perform game-specific functions.
+    Scope is always on the PointerLock object.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_runOnLockError" class="method item public">
+    <h3 class="name"><code>runOnLockError</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l393"><code>src&#x2F;pointer-lock.js:393</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Empty function called whenever the pointer lock encounters an error.
+    Override this to perform game-specific functions.
+    Scope is always on the PointerLock object.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_runOnMouseMove" class="method item public">
+    <h3 class="name"><code>runOnMouseMove</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l404"><code>src&#x2F;pointer-lock.js:404</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Empty function called whenever the pointer moves.
+    Override this to perform game-specific functions.
+    Scope is always on the PointerLock object.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_runOnUnlock" class="method item public">
+    <h3 class="name"><code>runOnUnlock</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l415"><code>src&#x2F;pointer-lock.js:415</code></a>
+        
+        </p>
+
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Empty function called whenever the pointer is unlocked.
+    Override this to perform game-specific functions.
+    Scope is always on the PointerLock object.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_canvas" class="property item public">
+    <h3 class="name"><code>canvas</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l99"><code>src&#x2F;pointer-lock.js:99</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>DOM element on which the lock occurs</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_locked" class="property item public">
+    <h3 class="name"><code>locked</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l108"><code>src&#x2F;pointer-lock.js:108</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Whether the canvas is currently locked</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_lockOnClick" class="property item public">
+    <h3 class="name"><code>lockOnClick</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l117"><code>src&#x2F;pointer-lock.js:117</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Whether to lock the pointer if it is not locked and the game is clicked.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_movementX" class="property item public">
+    <h3 class="name"><code>movementX</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l127"><code>src&#x2F;pointer-lock.js:127</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Mouse delta in X axis; how far the mouse was last moved horizontally.
+    This data is available to the &quot;runOnMouseMove&quot; method
+    and should be used there.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_movementY" class="property item public">
+    <h3 class="name"><code>movementY</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l139"><code>src&#x2F;pointer-lock.js:139</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Mouse delta in Y axis; how far the mouse was last moved vertically.
+    This data is available to the &quot;runOnMouseMove&quot; method
+    and should be used there.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_trackWhileUnlocked" class="property item public">
+    <h3 class="name"><code>trackWhileUnlocked</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_pointer-lock.js.html#l151"><code>src&#x2F;pointer-lock.js:151</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.1.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>Whether to track mouse deltas when the pointer is not locked.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
